@@ -1,0 +1,32 @@
+iables a ser definidas son las siguientes:
+■ AGENTE_USUARIO: El agente de usuario de la petición.
+■ METODO: El método HTTP utilizado.
+■ RECURSO: El recurso al que se quiere acceder con la petición
+■ CUERPO: El cuerpo de la petición.
+■ CLIENTE_IP: La dirección IP del cliente.
+■ CABECERAS_VALORES: Los valores de las cabeceras.
+■ CABECERAS_NOMBRES: Los nombres de las cabeceras.
+■ CABECERAS: Nombres y valores de las cabeceras.
+■ PETICION_LINEA: La primer línea de la petición (es decir, la línea
+en donde están el método, el recurso y el protocolo).
+■ COOKIES: Las cookies
+
+REGLA->1;CABECERAS_VALORES;regex:”^AGENTE_USUARIO$”;Bloqueo de método TRACE deHTTP;codigo:404
+
+REGLA->2;METODO;regex:”^METODO$”;Bloqueo de método TRACE deHTTP;codigo:404
+
+REGLA->3;METODO;regex:”^RECUROS0$”;Bloqueo de método TRACE de HTTP;codigo:400
+
+REGLA->4;METODO;regex:”^CUERPO$”;Bloqueo de método TRACE de HTTP;codigo:404
+
+REGLA->5;METODO;regex:”^CLIENTE_IP$”;Bloqueo de método TRACE de HTTP;codigo:404
+
+REGLA->6;METODO;regex:”^TRACE$”;Bloqueo de método TRACE deHTTP;codigo:404
+
+REGLA->7;METODO;regex:”^CABECERAS_VALORES$”;Bloqueo de método TRACE deHTTP;codigo:404
+REGLA->8;METODO;regex:”^CABECERAS_NOMBRES$”;Bloqueo de método TRACE deHTTP;codigo:404
+REGLA->9;METODO;regex:”^TRACE$”;Bloqueo de método TRACE deHTTP;codigo:404
+REGLA->10;METODO;regex:”^PETICION_LINEA$”;Bloqueo de método TRACE deHTTP;codigo:404
+REGLA->11;METODO;regex:”^COOKIES$”;Bloqueo de método TRACE deHTTP;codigo:404
+
+
